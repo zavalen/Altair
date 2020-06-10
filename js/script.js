@@ -8852,3 +8852,43 @@ menuItem.forEach((el) =>
   })
 );
 ;
+
+//переключение эктив пока скроллишь
+const links = document.querySelectorAll('.menu__item');
+const sections = document.querySelectorAll('section');
+
+function changeLinkState() {
+  let index = sections.length;
+
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+  links.forEach((link) => link.classList.remove('menu__item--active'));
+  links[index].classList.add('menu__item--active');
+}
+
+changeLinkState();
+window.addEventListener('scroll', changeLinkState);
+
+//popup
+
+const popupWindow = document.getElementById('popup');
+const closeBtn = document.getElementById('closePopup');
+const popup = document
+  .querySelector('#newsletter')
+  .addEventListener('click', showPopup);
+
+function showPopup() {
+  popupWindow.classList.add('popup_active');
+  closeBtn.addEventListener('click', closePop);
+  popupWindow.addEventListener('click', hidePop);
+  function closePop() {
+    popupWindow.classList.remove('popup_active');
+    closeBtn.removeEventListener('click', closePop);
+    popupWindow.removeEventListener('click', hidePop);
+  }
+  function hidePop(event) {
+    if (event.target === popupWindow) {
+      closePop();
+    }
+  }
+}

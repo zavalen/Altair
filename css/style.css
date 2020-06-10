@@ -692,7 +692,12 @@ main img {
 }
 
 .header {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
+  background-color: #fff;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 
 .header-container {
@@ -731,14 +736,18 @@ main img {
   font-weight: 600;
   font-size: 1.3rem;
   font-family: Montserrat;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .menu__item:hover {
-  color: #303941;
+  color: red;
 }
 
 .menu__item--active {
-  color: #303941;
+  color: red;
 }
 
 .menu__link {
@@ -913,6 +922,9 @@ main img {
 
 .pagination {
   font-family: Montserrat;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .pagination__prev {
@@ -925,6 +937,10 @@ main img {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.pagination__prev:hover {
+  color: #dadada;
 }
 
 .pagination__number {
@@ -955,6 +971,10 @@ main img {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.pagination__next:hover {
+  color: #dadada;
 }
 
 .how-work {
@@ -1000,6 +1020,7 @@ main img {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-bottom: 2rem;
+  text-transform: uppercase;
 }
 
 .heading-two__center {
@@ -1189,6 +1210,89 @@ main img {
 
 .footer__copyright {
   text-align: center;
+}
+
+.popup {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #3f3b48b9;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: opacity 5s;
+  -o-transition: opacity 5s;
+  transition: opacity 5s;
+  z-index: 100000;
+  overflow: auto;
+}
+
+.regForm {
+  position: relative;
+  top: 10rem;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem 2rem 4rem;
+  width: 60rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  -webkit-box-shadow: 0 0 2rem #353535;
+          box-shadow: 0 0 2rem #353535;
+}
+
+input[type='text'] {
+  margin-top: 2rem;
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+  border: none;
+  border: 3px solid silver;
+  font-family: Montserrat;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  outline: none;
+  width: 80%;
+  text-align: center;
+}
+
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='text']:focus {
+  border: 3px solid #3f3b48;
+}
+
+.closePopup {
+  font-size: 4.5rem;
+  float: right;
+  position: absolute;
+  top: -3.5rem;
+  right: -2.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.popup_active {
+  display: block;
+  opacity: 1;
+  -webkit-transition: 2s;
+  -o-transition: 2s;
+  transition: 2s;
+}
+
+.popup__btn {
+  border: 0;
+  background-color: #ff0000;
+  text-transform: uppercase;
+  margin: 0 auto;
+  padding: 1rem 2.4rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 0.6rem;
 }
 
 /**
@@ -2086,6 +2190,14 @@ button.swiper-pagination-bullet {
 
   .heading-two__center {
     margin-bottom: 2rem;
+  }
+
+  .regForm {
+    width: 70%;
+  }
+
+  .popup__btn {
+    padding: 2rem 4rem;
   }
 
   .slider-card__header {

@@ -40,15 +40,15 @@
               <li class="menu__item">
                 <a class="menu__link" href="#facts">fun facts</a>
               </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#"
+              <li id="newsletter" class="menu__item">
+                <span class="menu__link" 
                   ><img
                     class="menu__newsletter"
                     src="./img/Mail.png"
                     alt="newsletter"
                   />
                   <span class="menu__newsletter-mobile">Newsletter</span>
-                </a>
+                </span>
               </li>
             </ul>
           </nav>
@@ -436,17 +436,38 @@
         <div class="footer__copyright">
           © Copyright. Tarasov Valentin. All rights reserved.
         </div>
-        <!-- <div class="footer__social">
-          <div class="footer__social-text">Follow us:</div>
-          <img class="footer__social-item" src="" alt="" />
-          <img class="footer__social-item" src="" alt="" />
-          <img class="footer__social-item" src="" alt="" />
-        </div> -->
+      
         </div>
         
       </footer>
-    </div>
 
+   
+   
+    </div>
+    <div id="popup" class="popup">
+      <div class="regForm">
+        <div id="closePopup" class="closePopup">&times;</div>
+        <div class="heading-two">
+          <span class="heading-two__center">
+            our
+            <span class="heading-two__underline"></span>
+          </span>
+
+          newsletter
+        </div>
+        <form>
+          <input type="text" name="name" id="name" placeholder="Name" />
+          <br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+          /><br />
+          <input class="popup__btn" type="submit" value="Subscribe" />
+        </form>
+      </div>
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>
