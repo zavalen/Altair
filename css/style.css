@@ -946,7 +946,7 @@ main img {
 .pagination__number {
   width: 3em;
   text-align: center;
-  padding: 0 0 1rem 0;
+  padding: 1rem 0;
   font-size: 4rem;
   letter-spacing: -0.2rem;
 }
@@ -2138,6 +2138,10 @@ button.swiper-pagination-bullet {
     background-image: none;
   }
 
+  .work__slide-pagination {
+    top: -3rem;
+  }
+
   .slide {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2168,6 +2172,14 @@ button.swiper-pagination-bullet {
   .slide__right {
     width: 50%;
     padding-left: 0;
+  }
+
+  .pagination__prev {
+    font-size: 2rem;
+  }
+
+  .pagination__next {
+    font-size: 2rem;
   }
 
   .how-work__features {
